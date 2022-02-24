@@ -2,6 +2,171 @@
 	"version":"2",
 	"templates":[
 		{
+			"type": 1,
+			"title": "FDO",
+			"description": "FDO Owner Service",
+			"categories":[
+				"edge"
+			],
+			"logo":"https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+			"platform":"linux",
+			"image":"portainer/pri-fidoiot:owner-master",
+			"ports":[
+				"8042:8042/tcp",
+				"8043:8043/tcp"
+			],
+			"volumes":[
+				{
+					"container":"/home/fdo/target"
+				}
+			],
+			"note":"Owner server public URL must use the format http://IP|URL:PORT?ipaddress=IP, e.g. http://owner.portainer.io:8042?ipaddress=183.187.112.47 or http://183.187.112.47:8042?ipaddress=183.187.112.47",
+			"env":[
+				{
+					"name":"owner_to0_rv_blob",
+					"label": "Owner server public URL"
+				},
+				{
+					"name":"owner_api_user",
+					"label":"API user"
+				},
+				{
+					"name":"owner_api_password",
+					"label":"API password"
+				},
+				{
+					"name":"owner_to0_scheduling_interval",
+					"default":"60",
+					"preset":true
+				},
+				{
+					"name":"owner_to0_scheduling_enabled",
+					"default":"true",
+					"preset":true
+				},				
+				{
+					"name":"owner_to2_port",
+					"default":"8042",
+					"preset":true
+				},
+				{
+					"name":"owner_protocol_scheme",
+					"default":"http",
+					"preset":true
+				},						
+				{
+					"name":"owner_https_port",
+					"default":"8043",
+					"preset":true
+				},				
+				{
+					"name":"owner_keystore",
+					"default":"./owner_keystore.p12",
+					"preset":true
+				},
+				{
+					"name":"owner_keystore_password",
+					"default":"JPmYuPdSYOG8U3a",
+					"preset":true
+				},
+				{
+					"name":"owner_ssl_keystore",
+					"default":"certs/ssl.p12",
+					"preset":true
+				},				
+				{
+					"name":"owner_ssl_keystore-password",
+					"default":"Sw2cqdcc1IM",
+					"preset":true
+				},
+				{
+					"name":"ssl_truststore",
+					"default":"certs/truststore",
+					"preset":true
+				},				
+				{
+					"name":"ssl_truststore_password",
+					"default":"Sw2cqdcc1IM",
+					"preset":true
+				},
+				{
+					"name":"log4j_configuration_file",
+					"default":"log4j2.xml",
+					"preset":true
+				},
+				{
+					"name":"catalina_home",
+					"default":"./target/tomcat",
+					"preset":true
+				},
+				{
+					"name":"owner_database_connection_url",
+					"default":"jdbc:h2:tcp://localhost:8051/./target/data/ops",
+					"preset":true
+				},
+				{
+					"name":"owner_database_username",
+					"default":"sa",
+					"preset":true
+				},
+				{
+					"name":"owner_database_password",
+					"default":"test",
+					"preset":true
+				},
+				{
+					"name":"owner_database_port",
+					"default":"8051",
+					"preset":true
+				},
+				{
+					"name":"owner_svi_string",
+					"default":"./serviceinfo/sample-svi.csv",
+					"preset":true
+				},
+				{
+					"name":"owner_svi_values",
+					"default":"./serviceinfo/sample-values",
+					"preset":true
+				},
+				{
+					"name":"owner_pub_key_path",
+					"default":"owner_pub_keys.pem",
+					"preset":true
+				},
+				{
+					"name":"owner2_pub_key_path",
+					"default":"owner2_pub_keys.pem",
+					"preset":true
+				},
+				{
+					"name":"ondie_cache",
+					"default":"file:///home/fdo/ondie_cache/",
+					"preset":true
+				},
+				{
+					"name":"ondie_autoupdate",
+					"default":"false",
+					"preset":true
+				},
+				{
+					"name":"ondie_zip_artifact",
+					"default":"https://tsci.intel.com/content/csme.zip",
+					"preset":true
+				},
+				{
+					"name":"ondie_check_revocations",
+					"default":"false",
+					"preset":true
+				},
+				{
+					"name":"fido_ssl_mode",
+					"default":"TEST",
+					"preset":true
+				}
+			]
+		},
+		{
 			"type":1,
 			"title":"Registry",
 			"description":"Docker image registry",
@@ -1046,7 +1211,7 @@
 			"platform":"linux",
 			"logo":"https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
 			"repository":{
-				"url":"https://github.com/portainer/templates",
+				"url":"https://github.com/deviantony/templates",
 				"stackfile":"stacks/fdo/docker-stack.yml"
 			},
 			"env":[
