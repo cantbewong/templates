@@ -51,7 +51,7 @@
 				},
 				{
 					"name":"owner_protocol_scheme",
-					"default":"http",
+					"default":"https",
 					"preset":true
 				},						
 				{
