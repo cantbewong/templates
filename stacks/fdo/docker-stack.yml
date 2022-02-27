@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   pri-fdo-rv:
-    image: portainer/pri-fidoiot:rv-master
+    image: portainer/pri-fidoiot:rv-internal-master
     expose:
       - "8040"
     ports:
@@ -25,7 +25,7 @@ services:
     network_mode: host
 
   pri-fdo-manufacturer:
-    image: portainer/pri-fidoiot:manufacturer-master
+    image: portainer/pri-fidoiot:manufacturer-internal-master
     expose:
       - "8039"
     ports:

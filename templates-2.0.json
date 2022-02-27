@@ -10,7 +10,7 @@
 			],
 			"logo":"https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
 			"platform":"linux",
-			"image":"portainer/pri-fidoiot:owner-master",
+			"image":"portainer/pri-fidoiot:owner-internal-master",
 			"ports":[
 				"8042:8042/tcp",
 				"8043:8043/tcp"
@@ -36,7 +36,7 @@
 				},
 				{
 					"name":"owner_to0_scheduling_interval",
-					"default":"60",
+					"default":"10",
 					"preset":true
 				},
 				{
