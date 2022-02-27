@@ -66,7 +66,7 @@
 				},
 				{
 					"name":"owner_keystore_password",
-					"default":"JPmYuPdSYOG8U3a",
+					"default":"g5rMbaSVvqiG4FnI",
 					"preset":true
 				},
 				{
@@ -76,7 +76,7 @@
 				},				
 				{
 					"name":"owner_ssl_keystore-password",
-					"default":"Sw2cqdcc1IM",
+					"default":"8qWeRJHtG6Q",
 					"preset":true
 				},
 				{
@@ -86,7 +86,7 @@
 				},				
 				{
 					"name":"ssl_truststore_password",
-					"default":"Sw2cqdcc1IM",
+					"default":"8qWeRJHtG6Q",
 					"preset":true
 				},
 				{
