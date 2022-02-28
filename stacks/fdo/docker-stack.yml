@@ -9,7 +9,7 @@ services:
       - "8040:8040"
       - "8041:8041"
     environment:
-      rv_ssl_keystore-password: 8qWeRJHtG6Q
+      rv_ssl_keystore-password: cHSXBuWl0Rs
       rv_port: 8040
       rv_database_connection_url: jdbc:h2:tcp://localhost:8050/./target/data/rvs
       rv_database_username: sa
@@ -31,9 +31,9 @@ services:
     ports:
       - "8039:8039"
     environment:
-      manufacturer_keystore_password: Wkp0OoisSKv1FIgg
-      manufacturer_api_password: FV0endWthhWXsi
-      manufacturer_ssl_keystore-password: 8qWeRJHtG6Q
+      manufacturer_keystore_password: z9ecH7MqIsMM62YJ
+      manufacturer_api_password: zmlFPWd32EJx3hvw
+      manufacturer_ssl_keystore-password: cHSXBuWl0Rs
       manufacturer_di_port: 8039
       manufacturer_database_connection_url: jdbc:h2:tcp://localhost:8049/./target/data/mfg
       manufacturer_database_username: sa
