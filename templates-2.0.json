@@ -1210,6 +1210,7 @@
 			"description":"FDO",
 			"platform":"linux",
 			"logo":"https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+			"note":"Owner server public URL must use the format http://IP|URL:PORT?ipaddress=IP, e.g. http://owner.portainer.io:8042?ipaddress=183.187.112.47 or http://183.187.112.47:8042?ipaddress=183.187.112.47",
 			"repository":{
 				"url":"https://github.com/deviantony/templates",
 				"stackfile":"stacks/fdo/docker-stack.yml"
@@ -1222,6 +1223,10 @@
 				{
 					"name": "owner_api_password",
 					"label": "API Password"
+				},
+				{
+					"name": "owner_to0_rv_blob",
+					"label": "API Owner server public URL"
 				}
 			]
 		}
