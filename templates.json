@@ -12,7 +12,7 @@
             "platform": "linux",
             "image": "deviantony/portainer-environment:standalone",
             "interactive": true,
-            "priviledged": true,
+            "privileged": true,
             "restart_policy": "always",
             "env": [
                 {
