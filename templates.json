@@ -4,13 +4,35 @@
         {
             "type": 1,
             "title": "Portainer Standalone environment",
-            "description": "A Docker Standalone environment that can be added to Portainer",
+            "description": "A Docker (in Docker) Standalone environment that can be added to Portainer",
             "categories":[
                 "docker"
             ],
             "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
             "platform": "linux",
             "image": "deviantony/portainer-environment:standalone",
+            "interactive": true,
+            "privileged": true,
+            "restart_policy": "always",
+            "env": [
+                {
+                    "name": "AGENT_PORT",
+                    "label": "Agent port",
+                    "default": "9001"
+                }
+            ],
+            "ports": ["9001/tcp"]
+        },
+        {
+            "type": 1,
+            "title": "Portainer Swarm one-node environment",
+            "description": "A Docker (in Docker) Swarm one-node environment that can be added to Portainer",
+            "categories":[
+                "docker"
+            ],
+            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+            "platform": "linux",
+            "image": "deviantony/portainer-environment:swarm",
             "interactive": true,
             "privileged": true,
             "restart_policy": "always",
