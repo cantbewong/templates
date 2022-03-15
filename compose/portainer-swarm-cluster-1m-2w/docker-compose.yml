@@ -3,6 +3,7 @@ services:
     image: docker:20-dind
     privileged: true
     hostname: swarm-manager
+    network_mode: bridge
     ports:
       - "${AGENT_PORT:-9001}:${AGENT_PORT:-9001}"
     healthcheck:
@@ -15,12 +16,15 @@ services:
     image: docker:20-dind
     privileged: true
     hostname: swarm-worker-1
+    network_mode: bridge
   swarm-worker-2:
     image: docker:20-dind
     privileged: true
     hostname: swarm-worker-2
+    network_mode: bridge
   conductor:
     image: deviantony/sind-conductor:latest
+    network_mode: bridge
     environment:
       WAIT_HOSTS: swarm-manager:2376, swarm-worker-1:2376, swarm-worker-2:2376
       SWARM_MANAGERS: swarm-manager
