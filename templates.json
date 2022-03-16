@@ -51,7 +51,7 @@
 			"type": 3,
 			"title": "Portainer Swarm 3-node environment",
 			"description": "A Docker (in Docker) Swarm 3-node environment that can be added to Portainer",
-			"note": "This cluster is composed of 1 Swarm manager and 2 Swarm workers with the Portainer agent already deployed. <br/> Wait for the manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Swarm manager container and the specified agent port to create an environment.<br/><br/><b>Make sure that Portainer was created within the Docker network portainer-net to be able to connect to the Swarm cluster.</b>",
+			"note": "This cluster is composed of 1 Swarm manager and 2 Swarm workers with the Portainer agent already deployed. <br/> Wait for the manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Docker host and the specified agent port to create an environment.",
             "categories": [
                 "docker",
                 "portainer"
@@ -79,7 +79,7 @@
 			"type": 3,
 			"title": "Portainer Swarm 6-node environment",
 			"description": "A Docker (in Docker) Swarm 6-node environment that can be added to Portainer",
-			"note": "This cluster is composed of 3 Swarm managers and 3 Swarm workers with the Portainer agent already deployed. <br/> Wait for the first manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Swarm manager container and the specified agent port to create an environment.<br/><br/><b>Make sure that Portainer was created within the Docker network portainer-net to be able to connect to the Swarm cluster.</b>",
+			"note": "This cluster is composed of 3 Swarm managers and 3 Swarm workers with the Portainer agent already deployed. <br/> Wait for the first manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Docker host and the specified agent port to create an environment.",
             "categories": [
                 "docker",
                 "portainer"
