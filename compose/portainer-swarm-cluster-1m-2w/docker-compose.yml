@@ -2,7 +2,6 @@ services:
   swarm-manager:
     image: docker:20-dind
     privileged: true
-    hostname: swarm-manager
     ports:
       - "${AGENT_PORT:-9001}:${AGENT_PORT:-9001}"
     healthcheck:
@@ -11,20 +10,12 @@ services:
       timeout: 5s
       retries: 5
       start_period: 60s
-    networks:
-      - portainer-net
   swarm-worker-1:
     image: docker:20-dind
     privileged: true
-    hostname: swarm-worker-1
-    networks:
-      - portainer-net    
   swarm-worker-2:
     image: docker:20-dind
     privileged: true
-    hostname: swarm-worker-2
-    networks:
-      - portainer-net    
   conductor:
     image: deviantony/sind-conductor:latest
     environment:
@@ -36,10 +27,5 @@ services:
       AGENT_VERSION: ${AGENT_VERSION:-latest}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - portainer-net
 
-networks:
-  portainer-net:
-    external:
-      name: portainer-net
+
