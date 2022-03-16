@@ -3,6 +3,19 @@
 	"templates":[
         {
             "type": 1,
+            "title": "Docker Standalone environment",
+            "description": "A Docker (in Docker) Standalone environment",
+            "categories": [
+                "docker"
+            ],
+            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+            "platform": "linux",
+            "image": "docker:20-dind",
+            "privileged": true,
+            "restart_policy": "always"
+        },        
+        {
+            "type": 1,
             "title": "Portainer Standalone environment",
             "description": "A Docker (in Docker) Standalone environment that can be added to Portainer",
             "categories": [
@@ -24,6 +37,20 @@
             ],
             "ports": ["9001/tcp"]
         },
+        {
+            "type": 1,
+            "title": "Docker Swarm 1-node environment",
+            "description": "A Docker (in Docker) Swarm one-node environment",
+            "categories": [
+                "docker"
+            ],
+            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+            "platform": "linux",
+            "image": "deviantony/portainer-environment:swarm-no-agent",
+            "interactive": true,
+            "privileged": true,
+            "restart_policy": "always"
+        },        
         {
             "type": 1,
             "title": "Portainer Swarm 1-node environment",
