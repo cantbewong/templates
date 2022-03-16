@@ -27,6 +27,7 @@ services:
     network_mode: bridge
     environment:
       WAIT_HOSTS: swarm-manager:2376, swarm-worker-1:2376, swarm-worker-2:2376
+      WAIT_TIMEOUT: 90
       SWARM_MANAGERS: swarm-manager
       SWARM_WORKERS: swarm-worker-1,swarm-worker-2
       AGENT_PORT: ${AGENT_PORT:-9001}
