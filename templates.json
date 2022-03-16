@@ -1,149 +1,142 @@
 {
-	"version":"2",
-	"templates":[
-        {
-            "type": 1,
-            "title": "Docker Standalone environment",
-            "description": "A Docker (in Docker) Standalone environment",
-            "categories": [
-                "docker"
-            ],
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
-            "platform": "linux",
-            "image": "docker:20-dind",
-            "privileged": true,
-            "restart_policy": "always"
-        },        
-        {
-            "type": 1,
-            "title": "Portainer Standalone environment",
-            "description": "A Docker (in Docker) Standalone environment that can be added to Portainer",
-            "categories": [
-                "docker",
-                "portainer"
-            ],
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-            "platform": "linux",
-            "image": "deviantony/portainer-environment:standalone",
-            "interactive": true,
-            "privileged": true,
-            "restart_policy": "always",
-            "env": [
-                {
-                    "name": "AGENT_PORT",
-                    "label": "Agent port",
-                    "default": "9001"
-                }
-            ],
-            "ports": ["9001/tcp"]
-        },
-        {
-            "type": 1,
-            "title": "Docker Swarm 1-node environment",
-            "description": "A Docker (in Docker) Swarm one-node environment",
-            "categories": [
-                "docker"
-            ],
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
-            "platform": "linux",
-            "image": "deviantony/portainer-environment:swarm-no-agent",
-            "interactive": true,
-            "privileged": true,
-            "restart_policy": "always"
-        },        
-        {
-            "type": 1,
-            "title": "Portainer Swarm 1-node environment",
-            "description": "A Docker (in Docker) Swarm one-node environment that can be added to Portainer",
-            "categories": [
-                "docker",
-                "portainer"
-            ],
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-            "platform": "linux",
-            "image": "deviantony/portainer-environment:swarm",
-            "interactive": true,
-            "privileged": true,
-            "restart_policy": "always",
-            "env": [
-                {
-                    "name": "AGENT_PORT",
-                    "label": "Agent port",
-                    "default": "9001"
-                }
-            ],
-            "ports": ["9001/tcp"]
-        },
-        {
+	"version": "2",
+	"templates": [{
+			"type": 1,
+			"title": "Docker Standalone environment",
+			"description": "A Docker (in Docker) Standalone environment",
+			"categories": [
+				"docker"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"platform": "linux",
+			"image": "docker:20-dind",
+			"privileged": true,
+			"restart_policy": "always"
+		},
+		{
+			"type": 1,
+			"title": "Portainer Standalone environment",
+			"description": "A Docker (in Docker) Standalone environment that can be added to Portainer",
+			"categories": [
+				"docker",
+				"portainer"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+			"platform": "linux",
+			"image": "deviantony/portainer-environment:standalone",
+			"interactive": true,
+			"privileged": true,
+			"restart_policy": "always",
+			"env": [{
+				"name": "AGENT_PORT",
+				"label": "Agent port",
+				"default": "9001"
+			}],
+			"ports": ["9001/tcp"]
+		},
+		{
+			"type": 1,
+			"title": "Docker Swarm 1-node environment",
+			"description": "A Docker (in Docker) Swarm one-node environment",
+			"categories": [
+				"docker"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"platform": "linux",
+			"image": "deviantony/portainer-environment:swarm-no-agent",
+			"interactive": true,
+			"privileged": true,
+			"restart_policy": "always"
+		},
+		{
+			"type": 1,
+			"title": "Portainer Swarm 1-node environment",
+			"description": "A Docker (in Docker) Swarm one-node environment that can be added to Portainer",
+			"categories": [
+				"docker",
+				"portainer"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+			"platform": "linux",
+			"image": "deviantony/portainer-environment:swarm",
+			"interactive": true,
+			"privileged": true,
+			"restart_policy": "always",
+			"env": [{
+				"name": "AGENT_PORT",
+				"label": "Agent port",
+				"default": "9001"
+			}],
+			"ports": ["9001/tcp"]
+		},
+		{
 			"type": 3,
 			"title": "Docker Swarm 3-node environment",
 			"description": "A Docker (in Docker) Swarm 3-node environment",
 			"note": "This cluster is composed of 1 Swarm manager and 2 Swarm workers.",
-            "categories": [
-                "docker"
-            ],            
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
-            "platform": "linux",
+			"categories": [
+				"docker"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/deviantony/templates",
 				"stackfile": "compose/docker-swarm-cluster-1m-2w/docker-compose.yml"
 			}
-		},        
-        {
+		},
+		{
 			"type": 3,
 			"title": "Portainer Swarm 3-node environment",
 			"description": "A Docker (in Docker) Swarm 3-node environment that can be added to Portainer",
 			"note": "This cluster is composed of 1 Swarm manager and 2 Swarm workers with the Portainer agent already deployed. <br/> Wait for the manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Docker host and the specified agent port to create an environment.",
-            "categories": [
-                "docker",
-                "portainer"
-            ],            
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-            "platform": "linux",
+			"categories": [
+				"docker",
+				"portainer"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/deviantony/templates",
 				"stackfile": "compose/portainer-swarm-cluster-1m-2w/docker-compose.yml"
 			},
-			"env": [
-				{
+			"env": [{
 					"name": "AGENT_VERSION",
 					"label": "Agent version",
-                    "default": "latest"
+					"default": "latest"
 				},
-                {
-                    "name": "AGENT_PORT",
-                    "label": "Agent port",
-                    "default": "9001"
-                }
+				{
+					"name": "AGENT_PORT",
+					"label": "Agent port",
+					"default": "9001"
+				}
 			]
 		},
-        {
+		{
 			"type": 3,
 			"title": "Portainer Swarm 6-node environment",
 			"description": "A Docker (in Docker) Swarm 6-node environment that can be added to Portainer",
 			"note": "This cluster is composed of 3 Swarm managers and 3 Swarm workers with the Portainer agent already deployed. <br/> Wait for the first manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Docker host and the specified agent port to create an environment.",
-            "categories": [
-                "docker",
-                "portainer"
-            ],            
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-            "platform": "linux",
+			"categories": [
+				"docker",
+				"portainer"
+			],
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/deviantony/templates",
 				"stackfile": "compose/portainer-swarm-cluster-3m-3w/docker-compose.yml"
 			},
-			"env": [
-				{
+			"env": [{
 					"name": "AGENT_VERSION",
 					"label": "Agent version",
-                    "default": "latest"
+					"default": "latest"
 				},
-                {
-                    "name": "AGENT_PORT",
-                    "label": "Agent port",
-                    "default": "9001"
-                }
+				{
+					"name": "AGENT_PORT",
+					"label": "Agent port",
+					"default": "9001"
+				}
 			]
 		}
-    ]
+	]
 }
