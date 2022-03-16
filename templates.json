@@ -125,7 +125,7 @@
 				"url": "https://github.com/deviantony/templates",
 				"stackfile": "compose/docker-swarm-cluster-3m-3w/docker-compose.yml"
 			}
-		},        
+		},
 		{
 			"type": 3,
 			"title": "Portainer Swarm 6-node environment",
