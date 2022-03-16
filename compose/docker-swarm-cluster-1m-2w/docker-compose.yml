@@ -2,14 +2,6 @@ services:
   swarm-manager:
     image: docker:20-dind
     privileged: true
-    ports:
-      - "${AGENT_PORT:-9001}:${AGENT_PORT:-9001}"
-    healthcheck:
-      test: netstat -an | grep ${AGENT_PORT:-9001} > /dev/null; if [ 0 != $$? ]; then exit 1; fi;
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
   swarm-worker-1:
     image: docker:20-dind
     privileged: true
@@ -23,8 +15,6 @@ services:
       WAIT_TIMEOUT: 60
       SWARM_MANAGERS: swarm-manager
       SWARM_WORKERS: swarm-worker-1,swarm-worker-2
-      AGENT_PORT: ${AGENT_PORT:-9001}
-      AGENT_VERSION: ${AGENT_VERSION:-latest}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 

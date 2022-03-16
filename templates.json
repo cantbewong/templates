@@ -76,6 +76,21 @@
         },
         {
 			"type": 3,
+			"title": "Docker Swarm 3-node environment",
+			"description": "A Docker (in Docker) Swarm 3-node environment",
+			"note": "This cluster is composed of 1 Swarm manager and 2 Swarm workers.",
+            "categories": [
+                "docker"
+            ],            
+            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+            "platform": "linux",
+			"repository": {
+				"url": "https://github.com/deviantony/templates",
+				"stackfile": "compose/docker-swarm-cluster-1m-2w/docker-compose.yml"
+			}
+		},        
+        {
+			"type": 3,
 			"title": "Portainer Swarm 3-node environment",
 			"description": "A Docker (in Docker) Swarm 3-node environment that can be added to Portainer",
 			"note": "This cluster is composed of 1 Swarm manager and 2 Swarm workers with the Portainer agent already deployed. <br/> Wait for the manager container healthcheck to be ready before adding it as an environment in Portainer. <br/> Use the IP address of the Docker host and the specified agent port to create an environment.",
