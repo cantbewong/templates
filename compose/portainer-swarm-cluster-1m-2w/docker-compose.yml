@@ -9,7 +9,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 60s
+      start_period: 30s
   swarm-worker-1:
     image: docker:20-dind
     privileged: true
@@ -20,7 +20,7 @@ services:
     image: deviantony/sind-conductor:latest
     environment:
       WAIT_HOSTS: swarm-manager:2376, swarm-worker-1:2376, swarm-worker-2:2376
-      WAIT_TIMEOUT: 90
+      WAIT_TIMEOUT: 60
       SWARM_MANAGERS: swarm-manager
       SWARM_WORKERS: swarm-worker-1,swarm-worker-2
       AGENT_PORT: ${AGENT_PORT:-9001}

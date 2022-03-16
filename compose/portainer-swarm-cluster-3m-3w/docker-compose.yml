@@ -9,7 +9,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 60s
+      start_period: 90s
   swarm-manager-2:
     image: docker:20-dind
     privileged: true
@@ -34,6 +34,5 @@ services:
       SWARM_WORKERS: swarm-worker-1,swarm-worker-2,swarm-worker-3
       AGENT_PORT: ${AGENT_PORT:-9001}
       AGENT_VERSION: ${AGENT_VERSION:-latest}
-      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
