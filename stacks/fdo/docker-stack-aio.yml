@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   pri-fdo-rv:
-    image: portainer/pri-fidoiot:rv-internal-aio-1.0-rel
+    image: portainer/pri-fidoiot:rv-internal-aio-portainer-internal
     expose:
       - "8040"
     ports:
@@ -25,7 +25,7 @@ services:
     network_mode: host
 
   pri-fdo-owner:
-    image: portainer/pri-fidoiot:owner-internal-aio-1.0-rel
+    image: portainer/pri-fidoiot:owner-internal-aio-portainer-internal
     expose:
       - "8042"
     ports:
@@ -67,7 +67,7 @@ services:
     network_mode: host
 
   pri-fdo-manufacturer:
-    image: portainer/pri-fidoiot:manufacturer-internal-aio-1.0-rel
+    image: portainer/pri-fidoiot:manufacturer-internal-aio-portainer-internal
     expose:
       - "8039"
     ports:
