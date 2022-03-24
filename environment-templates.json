@@ -17,6 +17,7 @@
 			"type": 1,
 			"title": "Portainer Standalone environment",
 			"description": "A Docker (in Docker) Standalone environment that can be added to Portainer",
+			"note": "When using a port different from the default one (9001), make sure to update the port mapping in advanced options accordingly (both host and container ports must match the new port value).",
 			"categories": [
 				"docker",
 				"portainer"
@@ -32,7 +33,7 @@
 				"label": "Agent port",
 				"default": "9001"
 			}],
-			"ports": ["9001/tcp"]
+			"ports": ["9001:9001/tcp"]
 		},
 		{
 			"type": 1,
