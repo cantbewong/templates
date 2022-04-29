@@ -2,14 +2,14 @@ version: "3.2"
 
 services:
   pri-fdo-rv:
-    image: portainer/pri-fidoiot:rv-internal-aio-portainer-internal
+    image: cantbewong/sdo-rv
     expose:
       - "8040"
     ports:
       - "8040:8040"
       - "8041:8041"
     environment:
-      rv_ssl_keystore-password: 51C3jsG8PWk
+      rv_ssl_keystore-password: NJuYCxrtaM
       rv_port: 8040
       rv_database_connection_url: jdbc:h2:tcp://localhost:8050/./target/data/rvs
       rv_database_username: sa
@@ -25,17 +25,17 @@ services:
     network_mode: host
 
   pri-fdo-owner:
-    image: portainer/pri-fidoiot:owner-internal-aio-portainer-internal
+    image: cantbewong/sdo-owner
     expose:
       - "8042"
     ports:
       - "8042:8042"
       - "8043:8043"
     environment:
-      owner_keystore_password: lEzXwSCtJpYNfz
-      owner_api_password: ${owner_api_password}
-      owner_ssl_keystore-password: 51C3jsG8PWk
-      ssl_truststore_password: 51C3jsG8PWk
+      owner_keystore_password: 6WLI4ywIdK5LaI4
+      owner_api_password: MCkP2UGEFyg5CfCz
+      owner_ssl_keystore-password: NJuYCxrtaM
+      ssl_truststore_password: NJuYCxrtaM
       owner_to2_port: 8042
       owner_database_connection_url: jdbc:h2:tcp://localhost:8051/./target/data/ops
       owner_database_username: sa
@@ -67,15 +67,15 @@ services:
     network_mode: host
 
   pri-fdo-manufacturer:
-    image: portainer/pri-fidoiot:manufacturer-internal-aio-portainer-internal
+    image: cantbewong/sdo-manufacturer
     expose:
       - "8039"
     ports:
       - "8039:8039"
     environment:
-      manufacturer_keystore_password: BiKz348p0n17jSwI
-      manufacturer_api_password: 5ZcWWQWBkT9T2oLW
-      manufacturer_ssl_keystore-password: 51C3jsG8PWk
+      manufacturer_keystore_password: F7f4E7b3LrjP2W
+      manufacturer_api_password: MCkP2UGEFyg5CfCz
+      manufacturer_ssl_keystore-password: NJuYCxrtaM
       manufacturer_di_port: 8039
       manufacturer_database_connection_url: jdbc:h2:tcp://localhost:8049/./target/data/mfg
       manufacturer_database_username: sa
