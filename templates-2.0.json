@@ -1227,13 +1227,13 @@
 		},
 		{
 			"type":3,
-			"title":"FDO All-in-one",
+			"title":"FDO All-in-one mod Steve",
 			"description":"FDO All-in-one",
 			"platform":"linux",
 			"logo":"https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
 			"note":"Owner server public URL must use the format http://IP|URL:PORT?ipaddress=IP, e.g. http://owner.portainer.io:8042?ipaddress=183.187.112.47 or http://183.187.112.47:8042?ipaddress=183.187.112.47",
 			"repository":{
-				"url":"https://github.com/deviantony/templates",
+				"url":"https://github.com/cantbewong/templates",
 				"stackfile":"stacks/fdo/docker-stack-aio.yml"
 			},
 			"env":[
